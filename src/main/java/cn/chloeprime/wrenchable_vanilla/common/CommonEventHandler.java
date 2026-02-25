@@ -34,7 +34,7 @@ public class CommonEventHandler {
         // Wrench!
         var result = WrenchBlockLogic.wrenchImpl(user, event.getHand(), hit);
         if (result != InteractionResult.PASS) {
-            event.cancel();
+            event.setCanceled(true);
             event.setCancellationResult(result);
         }
     }
@@ -73,7 +73,7 @@ public class CommonEventHandler {
         // Wrench!
         var result = WrenchEntityLogic.wrenchImpl(user, event.getHand(), target);
         if (result != InteractionResult.PASS) {
-            event.cancel();
+            event.setCanceled(true);
             event.setCancellationResult(result);
         }
     }

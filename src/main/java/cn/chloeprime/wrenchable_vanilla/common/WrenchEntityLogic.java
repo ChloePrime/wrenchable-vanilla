@@ -115,7 +115,7 @@ public class WrenchEntityLogic {
             return;
         }
         if (tryCaptureContainerDrop(item.level(), item.getItem())) {
-            event.cancel();
+            event.setCanceled(true);
         }
     }
 
@@ -130,7 +130,7 @@ public class WrenchEntityLogic {
             return;
         }
         if (tryPlayWrenchedSound(event.getLevel(), null, event.getSource())) {
-            event.cancel();
+            event.setCanceled(true);
         }
     }
 

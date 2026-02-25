@@ -35,7 +35,8 @@ class WVEntityTagsProvider extends EntityTypeTagsProvider {
                 .add(EntityType.CHEST_MINECART)
                 .add(EntityType.FURNACE_MINECART)
                 .add(EntityType.TNT_MINECART)
-                .addOptionalTags(ctag("minecarts"));
+                .addOptionalTag(ctag("minecarts")[0])
+                .addOptionalTag(ctag("minecarts")[1]);
         tag(BOATS)
                 .add(EntityType.BOAT)
                 .add(EntityType.CHEST_BOAT)
