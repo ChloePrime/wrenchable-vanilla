@@ -1,6 +1,5 @@
 package cn.chloeprime.wrenchable_vanilla.data;
 
-import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
