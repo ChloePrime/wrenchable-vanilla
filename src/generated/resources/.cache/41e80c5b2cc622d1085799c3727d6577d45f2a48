@@ -1,0 +1,7 @@
+// 1.20.1	2026-02-25T23:12:40.072031	Tags for minecraft:block mod id wrenchable_vanilla
+072a2c154576b3982ac47f8262542f60444a19c9 data/wrenchable_vanilla/tags/blocks/force_pick.json
+5076f9e01226365a4f76ee0543e16377e61f1185 data/wrenchable_vanilla/tags/blocks/skulls.json
+e55e780dfbd323c0acd15c1322ff557a71c318eb data/wrenchable_vanilla/tags/blocks/wrenchable.json
+e0170936815b47dee6d497b7d2f00ee3e927183b data/wrenchable_vanilla/tags/blocks/wrenchable/blocks/vanilla.json
+1edd00e78b5165cdbe90f312b57f71ca1798b1e1 data/wrenchable_vanilla/tags/blocks/wrenchable/tags/forge.json
+7debf487769f549f371d63e183dc2358d71fbb27 data/wrenchable_vanilla/tags/blocks/wrenchable/tags/vanilla.json

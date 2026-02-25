@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "#forge:barrels",
+      "required": false
+    },
+    {
+      "id": "#c:barrels",
+      "required": false
+    },
+    {
+      "id": "#forge:bookshelves",
+      "required": false
+    },
+    {
+      "id": "#c:bookshelves",
+      "required": false
+    },
+    {
+      "id": "#forge:chests",
+      "required": false
+    },
+    {
+      "id": "#c:chests",
+      "required": false
+    },
+    {
+      "id": "#forge:fences",
+      "required": false
+    },
+    {
+      "id": "#c:fences",
+      "required": false
+    },
+    {
+      "id": "#forge:fence_gates",
+      "required": false
+    },
+    {
+      "id": "#c:fence_gates",
+      "required": false
+    }
+  ]
+}

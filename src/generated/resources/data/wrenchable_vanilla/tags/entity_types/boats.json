@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:boat",
+    "minecraft:chest_boat",
+    {
+      "id": "#forge:boats",
+      "required": false
+    },
+    {
+      "id": "#c:boats",
+      "required": false
+    }
+  ]
+}

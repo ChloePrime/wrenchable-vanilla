@@ -1,0 +1,17 @@
+{
+  "values": [
+    "minecraft:minecart",
+    "minecraft:hopper_minecart",
+    "minecraft:chest_minecart",
+    "minecraft:furnace_minecart",
+    "minecraft:tnt_minecart",
+    {
+      "id": "#forge:minecarts",
+      "required": false
+    },
+    {
+      "id": "#c:minecarts",
+      "required": false
+    }
+  ]
+}

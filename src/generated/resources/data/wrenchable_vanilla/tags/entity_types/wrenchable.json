@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#wrenchable_vanilla:minecarts",
+    "#wrenchable_vanilla:boats",
+    "minecraft:item_frame",
+    "minecraft:glow_item_frame",
+    "minecraft:painting",
+    "minecraft:armor_stand",
+    "minecraft:end_crystal"
+  ]
+}
