@@ -1,5 +1,5 @@
-// 1.20.1	2026-02-25T23:27:07.5580899	Tags for minecraft:entity_type mod id wrenchable_vanilla
-cb8d4b0c8a019cc4e4792edf9c8ec2ac04dfd773 data/wrenchable_vanilla/tags/entity_types/boats.json
-41dc040cee1faae1195c90d68185bd4fa781179c data/wrenchable_vanilla/tags/entity_types/force_pick.json
-7ea719f9322b891d25a0a96820ee22df55c48c72 data/wrenchable_vanilla/tags/entity_types/minecarts.json
-c815f5e0bd44d573b7075400c6bb2292996c68d9 data/wrenchable_vanilla/tags/entity_types/wrenchable.json
+// 1.21.1	2026-02-28T06:06:12.9413634	Tags for minecraft:entity_type mod id wrenchable_vanilla
+8c2cd5a1e5b48164890f4884c507c7d77c8a1fd0 data/wrenchable_vanilla/tags/entity_type/boats.json
+41dc040cee1faae1195c90d68185bd4fa781179c data/wrenchable_vanilla/tags/entity_type/force_pick.json
+bfc7b18f00333df5b41e731ed8b0dc59888bf542 data/wrenchable_vanilla/tags/entity_type/minecarts.json
+c815f5e0bd44d573b7075400c6bb2292996c68d9 data/wrenchable_vanilla/tags/entity_type/wrenchable.json

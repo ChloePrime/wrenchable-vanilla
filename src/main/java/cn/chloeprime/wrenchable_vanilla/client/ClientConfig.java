@@ -5,15 +5,15 @@ import cn.chloeprime.wrenchable_vanilla.WrenchableVanillaMod;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.config.ModConfigEvent;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.Optional;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public class ClientConfig {
     public static Optional<Holder<SoundEvent>> getBreakBlockSound() {
         if (breakBlockSound == null) {
@@ -27,19 +27,19 @@ public class ClientConfig {
     }
 
 
-    private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    static final ForgeConfigSpec.ConfigValue<String> WRENCH_BREAK_BLOCK_SOUND = BUILDER
+    static final ModConfigSpec.ConfigValue<String> WRENCH_BREAK_BLOCK_SOUND = BUILDER
             .comment("""
                     ID of sound played when block is wrenched.
                     Set to empty to let the original break sound play.""")
             .define("wrench_break_block_sound", "minecraft:entity.item_frame.remove_item", CommonConfig::validateNullableResourceLocation);
 
-    static final ForgeConfigSpec.BooleanValue HIDE_BREAK_PARTICLE = BUILDER
+    static final ModConfigSpec.BooleanValue HIDE_BREAK_PARTICLE = BUILDER
             .comment("Hide block break particle when block is wrenched")
             .define("hide_break_particle", true);
 
-    static final ForgeConfigSpec SPEC = BUILDER.build();
+    static final ModConfigSpec SPEC = BUILDER.build();
 
 
     static volatile ResourceKey<SoundEvent> breakBlockSound;

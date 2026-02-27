@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "#forge:barrels",
+      "id": "#neoforge:barrels",
       "required": false
     },
     {
@@ -9,7 +9,7 @@
       "required": false
     },
     {
-      "id": "#forge:bookshelves",
+      "id": "#neoforge:bookshelves",
       "required": false
     },
     {
@@ -17,7 +17,7 @@
       "required": false
     },
     {
-      "id": "#forge:chests",
+      "id": "#neoforge:chests",
       "required": false
     },
     {
@@ -25,7 +25,7 @@
       "required": false
     },
     {
-      "id": "#forge:fences",
+      "id": "#neoforge:fences",
       "required": false
     },
     {
@@ -33,7 +33,7 @@
       "required": false
     },
     {
-      "id": "#forge:fence_gates",
+      "id": "#neoforge:fence_gates",
       "required": false
     },
     {

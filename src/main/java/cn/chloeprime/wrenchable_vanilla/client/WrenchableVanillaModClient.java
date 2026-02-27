@@ -1,12 +1,15 @@
 package cn.chloeprime.wrenchable_vanilla.client;
 
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ModConfig;
+import cn.chloeprime.wrenchable_vanilla.WrenchableVanillaMod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 
+@Mod(value = WrenchableVanillaMod.MOD_ID, dist = Dist.CLIENT)
 public class WrenchableVanillaModClient {
-    @SuppressWarnings("removal")
-    public WrenchableVanillaModClient() {
-        var loadContext = ModLoadingContext.get();
-        loadContext.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
+    public WrenchableVanillaModClient(IEventBus ignored, ModContainer container) {
+        container.registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
     }
 }

@@ -6,7 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PlayerHeadItem;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.PlayerHeadBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -14,7 +14,6 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public enum WrenchMode {
@@ -99,14 +98,15 @@ public enum WrenchMode {
     }
 
     private static void saveBlockEntityData(ItemStack stack, BlockEntity be) {
-        var saved = be.saveWithId();
-        BlockItem.setBlockEntityData(stack, be.getType(), be.saveWithId());
-        if (stack.getItem() instanceof PlayerHeadItem && saved.contains("SkullOwner")) {
-            var itemTag = stack.getOrCreateTag();
-            itemTag.put("SkullOwner", Objects.requireNonNull(saved.get("SkullOwner")));
-            Optional
-                    .of(itemTag.getCompound("BlockEntityTag"))
-                    .ifPresent(beTag -> beTag.remove("SkullOwner"));
+        var reg = Optional
+                .ofNullable(be.getLevel())
+                .map(Level::registryAccess)
+                .orElse(null);
+        if (reg == null) {
+            return;
         }
+        var saved = be.saveWithId(reg);
+        BlockItem.setBlockEntityData(stack, be.getType(), saved);
+        stack.applyComponents(be.collectComponents());
     }
 }

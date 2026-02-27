@@ -29,7 +29,7 @@ public class MixinLevelRenderer {
         if (configured == null) {
             return original;
         }
-        return configured.get();
+        return configured.value();
     }
 
     @ModifyExpressionValue(

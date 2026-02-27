@@ -3,7 +3,7 @@
     "minecraft:boat",
     "minecraft:chest_boat",
     {
-      "id": "#forge:boats",
+      "id": "#neoforge:boats",
       "required": false
     },
     {

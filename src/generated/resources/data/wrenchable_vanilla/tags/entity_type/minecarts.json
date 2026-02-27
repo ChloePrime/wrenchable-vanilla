@@ -6,7 +6,7 @@
     "minecraft:furnace_minecart",
     "minecraft:tnt_minecart",
     {
-      "id": "#forge:minecarts",
+      "id": "#neoforge:minecarts",
       "required": false
     },
     {

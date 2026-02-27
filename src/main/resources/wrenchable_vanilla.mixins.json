@@ -2,8 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "cn.chloeprime.wrenchable_vanilla.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "wrenchable_vanilla.refmap.json",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "MixinContainers"
   ],

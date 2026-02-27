@@ -9,7 +9,7 @@ import net.minecraft.data.tags.EntityTypeTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -56,7 +56,7 @@ class WVEntityTagsProvider extends EntityTypeTagsProvider {
     private static TagKey<EntityType<?>>[] ctag(String... path) {
         var tags = new TagKey[2 * path.length];
         for (int i = 0; i < path.length; i++) {
-            tags[2 * i] = BlockTags.create(WrenchableVanillaMod.rl("forge", path[i]));
+            tags[2 * i] = BlockTags.create(WrenchableVanillaMod.rl("neoforge", path[i]));
             tags[2 * i + 1] = BlockTags.create(WrenchableVanillaMod.rl("c", path[i]));
         }
         return tags;

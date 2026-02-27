@@ -1,6 +1,5 @@
 package cn.chloeprime.wrenchable_vanilla;
 
-import cn.chloeprime.wrenchable_vanilla.client.WrenchableVanillaModClient;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
@@ -8,28 +7,21 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.loading.FMLLoader;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import org.slf4j.Logger;
 
 import java.util.Random;
 
-@SuppressWarnings("removal")
 @Mod(WrenchableVanillaMod.MOD_ID)
 public class WrenchableVanillaMod {
     public static final String MOD_ID = "wrenchable_vanilla";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public WrenchableVanillaMod() {
-        var loadContext = ModLoadingContext.get();
-        loadContext.registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
-
-        if (FMLLoader.getDist().isClient()) {
-            new WrenchableVanillaModClient();
-        }
-
+    public WrenchableVanillaMod(IEventBus ignored, ModContainer container) {
+        container.registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
     }
 
     public static ResourceLocation rl(String path) {
@@ -37,7 +29,7 @@ public class WrenchableVanillaMod {
     }
 
     public static ResourceLocation rl(String name, String path) {
-        return new ResourceLocation(name, path);
+        return ResourceLocation.fromNamespaceAndPath(name, path);
     }
 
     public static void playSound(

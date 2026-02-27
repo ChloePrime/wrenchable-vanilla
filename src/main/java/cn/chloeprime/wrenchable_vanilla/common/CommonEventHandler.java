@@ -1,19 +1,21 @@
 package cn.chloeprime.wrenchable_vanilla.common;
 
+import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
-@Mod.EventBusSubscriber
+import java.util.function.Consumer;
+
+@EventBusSubscriber
 public class CommonEventHandler {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onPlayerRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         // Preconditions
-        if (event.getResult() == Event.Result.DENY) {
+        if (event.getCancellationResult() != InteractionResult.PASS) {
             return;
         }
         var user = event.getEntity();
@@ -41,20 +43,19 @@ public class CommonEventHandler {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onPlayerRightClickEntity(PlayerInteractEvent.EntityInteractSpecific event) {
-        onPlayerRightClickEntity(event, event.getTarget());
+        onPlayerRightClickEntity(event, event.getTarget(), event::setCanceled, event::setCancellationResult);
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onPlayerRightClickEntity(PlayerInteractEvent.EntityInteract event) {
-        onPlayerRightClickEntity(event, event.getTarget());
+        onPlayerRightClickEntity(event, event.getTarget(), event::setCanceled, event::setCancellationResult);
     }
 
-    public static void onPlayerRightClickEntity(PlayerInteractEvent event, Entity target) {
+    public static void onPlayerRightClickEntity(PlayerInteractEvent event, Entity target,
+                                                BooleanConsumer canceller, Consumer<InteractionResult> reasonSetter
+    ) {
         // Preconditions
         if (target.isRemoved()) {
-            return;
-        }
-        if (event.getResult() == Event.Result.DENY) {
             return;
         }
         var user = event.getEntity();
@@ -72,9 +73,9 @@ public class CommonEventHandler {
 
         // Wrench!
         var result = WrenchEntityLogic.wrenchImpl(user, event.getHand(), target);
-        if (result != InteractionResult.PASS) {
-            event.setCanceled(true);
-            event.setCancellationResult(result);
+        if (result != InteractionResult.PASS ) {
+            canceller.accept(true);
+            reasonSetter.accept(result);
         }
     }
 
