@@ -1,7 +1,9 @@
-// 1.21.1	2026-02-28T06:03:42.9030832	Tags for minecraft:block mod id wrenchable_vanilla
+// 1.21.1	2026-02-28T06:27:19.8869194	Tags for minecraft:block mod id wrenchable_vanilla
+d7ac24837f69f46b52d2c7c893c9183a43abf559 data/wrenchable_vanilla/tags/block/copper_bulbs.json
 072a2c154576b3982ac47f8262542f60444a19c9 data/wrenchable_vanilla/tags/block/force_pick.json
 08225f262233778e0e9a6dff53648265b8d56778 data/wrenchable_vanilla/tags/block/skulls.json
 e55e780dfbd323c0acd15c1322ff557a71c318eb data/wrenchable_vanilla/tags/block/wrenchable.json
-190f8d948c89ae1b712e68390bce62d4a03f4cd2 data/wrenchable_vanilla/tags/block/wrenchable/blocks/vanilla.json
+150fd2b80c3b0fb0561c6b5eaf5e1f35a44c995b data/wrenchable_vanilla/tags/block/wrenchable/blocks/vanilla.json
+dfa2fabc1ffb699cfd6475e1102ab46052bb65ff data/wrenchable_vanilla/tags/block/wrenchable/blocks/vanilla_1_21.json
 e8fa781875cc13462852d1ea3d0db3e7304d5b32 data/wrenchable_vanilla/tags/block/wrenchable/tags/forge.json
 7debf487769f549f371d63e183dc2358d71fbb27 data/wrenchable_vanilla/tags/block/wrenchable/tags/vanilla.json

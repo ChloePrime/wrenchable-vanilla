@@ -57,6 +57,7 @@
     "minecraft:dropper",
     "minecraft:hopper",
     "minecraft:observer",
-    "minecraft:tnt"
+    "minecraft:tnt",
+    "#wrenchable_vanilla:wrenchable/blocks/vanilla_1_21"
   ]
 }

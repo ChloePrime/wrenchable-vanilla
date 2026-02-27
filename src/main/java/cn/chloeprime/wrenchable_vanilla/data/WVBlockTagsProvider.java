@@ -22,6 +22,11 @@ class WVBlockTagsProvider extends BlockTagsProvider {
     public static final TagKey<Block> WRENCHABLE_VANILLA = BlockTags.create(WrenchableVanillaMod.rl("wrenchable/blocks/vanilla"));
     public static final TagKey<Block> SKULLS = BlockTags.create(WrenchableVanillaMod.rl("skulls"));
 
+    public static class MC1_21 {
+        public static final TagKey<Block> WRENCHABLE_VANILLA_1_21 = BlockTags.create(WrenchableVanillaMod.rl("wrenchable/blocks/vanilla_1_21"));
+        public static final TagKey<Block> COPPER_BULBS = BlockTags.create(WrenchableVanillaMod.rl("copper_bulbs"));
+    }
+
     public WVBlockTagsProvider(
             PackOutput packOutput,
             CompletableFuture<HolderLookup.Provider> lookupProvider,
@@ -95,6 +100,21 @@ class WVBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.PIGLIN_HEAD, Blocks.PIGLIN_WALL_HEAD)
                 .add(Blocks.DRAGON_HEAD, Blocks.DRAGON_WALL_HEAD)
                 .addOptionalTags(ctag("skulls"));
+        // 1.21 blocks
+        tag(MC1_21.COPPER_BULBS)
+                .add(Blocks.COPPER_BULB)
+                .add(Blocks.EXPOSED_COPPER_BULB)
+                .add(Blocks.WEATHERED_COPPER_BULB)
+                .add(Blocks.OXIDIZED_COPPER_BULB)
+                .add(Blocks.WAXED_COPPER_BULB)
+                .add(Blocks.WAXED_EXPOSED_COPPER_BULB)
+                .add(Blocks.WAXED_WEATHERED_COPPER_BULB)
+                .add(Blocks.WAXED_OXIDIZED_COPPER_BULB);
+        tag(MC1_21.WRENCHABLE_VANILLA_1_21)
+                .addTag(MC1_21.COPPER_BULBS)
+                .add(Blocks.CRAFTER);
+        tag(WRENCHABLE_VANILLA)
+                .addTag(MC1_21.WRENCHABLE_VANILLA_1_21);
     }
 
     @SuppressWarnings("unchecked")
